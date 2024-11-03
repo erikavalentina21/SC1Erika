@@ -1,7 +1,8 @@
 #! /bin/bash
 declare -A colores
-for color in $@; do
-	read -p "dime el cogido RGB del color $color: " cod
+fich=$1
+for color in $(cat $fich); do
+	read -p "dime el cod RGB del color $color: " cod
 	colores[$color]=$cod
 	echo "el codigo de $color es ${colores[$color]}"
 
@@ -42,6 +43,7 @@ contenido='
 	<h1>Hola, mundo!</h1>
 
 	<p>Este es un ejemplo de htlm<p>
+	<img src="/home/usuario/Descargas/imagen">
 <body>
 </html>
 '
